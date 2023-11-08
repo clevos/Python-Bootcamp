@@ -20,8 +20,12 @@ def christmas_day(year):
     # HINT: Make a date object and use the isoweekday method
     #pass                    # Implement this function
     #formula for dateTime is the year first, then month number, then day
+
+    #Created a date object
     Date=datetime.date(year,12,25)
+    #convert date object to ISO formatt
     temp=Date.isoweekday()
+    #return ISO format date
     return temp
 
 
@@ -40,18 +44,24 @@ def iso_str(d,t):
     """
     # HINT: Combine date and time into a datetime and use isoformat
   #  pass                    # Implement this function
+
+    # create a variable month and extract from the date object month
     month=d.month
+    # create a variable day and extract from the date object
     day=d.day
     year=d.year
-
     hour=t.hour
     minute=t.minute
     seconds=t.second
     microseconds=t.microsecond
+    # created datetime object using the previous variables
     temp=datetime.datetime(year,month,day,hour,minute,seconds,microseconds)
-   # print(temp)
+    #convert datetime object to ISO formatt 
     temp=temp.isoformat()
+    #return datetime object
     return str(temp)
+
+# test case and function calls
 currentYear=christmas_day(2023)
 print(currentYear)
 date=datetime.date(2023,12,25)

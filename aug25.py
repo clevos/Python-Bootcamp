@@ -33,18 +33,24 @@ def extract_name(s):
     """
     # You must use an if-else statement in this function.
     #pass
+
+    # find location of "@" in the string s using the introcs package
     pos=introcs.find_str(s,"@")
-    print("string s is:",s)
-    print("theIndexOf @ instr s is:",pos)
+    
+    # get the domain after the @ symbol
     domain=s[pos:]
+
+    # the string before the @ symbol is the username
     user=s[0:pos]
-    print(domain)
-    print(user)
+    
+    #check the domain name = mompop.net
     if domain =="@mompop.net":
         print("fullname:",user)
+        #in this domain the user first name and last is separated by the dot
         pos1=introcs.find_str(user,".")
         print("firstname",user[0:pos1])
         result=user[0:pos1]
+    #raise a error if the domain is not matched
     else:
         print("error")
         print("fullname ",user)    
@@ -54,7 +60,7 @@ def extract_name(s):
         #return result
     return result
 
-
+#test case and function call
 test=extract_name("first.last@mompop.net")
 print(test)
 print("==============")
